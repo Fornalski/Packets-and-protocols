@@ -14,31 +14,28 @@ Notes and small implementations built while working through **TCP/IP Illustrated
 Long-term goal is a networking-focused career (network admin, eventually protocol/standards work). This repo is where the reading turns into something I actually built, not just read about.
 
 ## Repo sturcture
-Packets-and-protocols/
+packets-and-protocols/
 ├── README.md
-├── LICENSE 
+├── LICENSE
 ├── .gitignore
+├── requirements.txt
 ├── docs/
-│   ├── reference.md        # Python/C important commands/syntax required to create implementation
-│   └── resources.md        # optional: books, RFC-s, articles, blogs I've used in learning process
-├── ch01-<topic-name>/
-│    └── [chapter sturc described bolow]
-└── requirements.txt      
+│   ├── reference.md              # Python/C commands & syntax used across implementations
+│   ├── resources.md              # books, RFCs, articles, blogs used in the learning process
+│   └── chapter-template/         # skeleton copied into every new ch0X folder
+│       ├── README.md
+│       ├── notes/
+│       │   └── understanding.md
+│       ├── python/
+│       ├── c/
+│       ├── SOLUTION.md
+│       ├── DELTA.md
+│       ├── pcap/
+│       └── diagrams/
+└── ch01-<topic-name>/
+    └── [chapter structure as defined in docs/chapter-template/]
 
-## Per-chapter folder structure
-Every chapter follows the same layout:
-
-    ch0X-<topic>/
-    ├── README.md              # what this chapter covers, how to run it
-    ├── notes/
-    │   └── understanding.md   # the topic explained in my own words
-    ├── python/                # Python implementation
-    ├── c/                     # C implementation
-    ├── SOLUTION.md            # what was built, design decisions, limitations
-    ├── DELTA.md                # what's changed since the book (modern context, RFCs)
-    ├── pcap/                  # captured traffic relevant to this chapter (if any)
-    └── diagrams/               # supporting sketches/diagrams (if any)
-
+## ch0X - Chapter layout
 **What to expect from each file:**
 
 | File | Purpose |
@@ -52,7 +49,6 @@ Every chapter follows the same layout:
 | `pcap/` | Real captured packets illustrating the chapter's protocol in action |
 | `diagrams/` | Visual aids for anything sequential (handshakes, state machines, flows) |
 
-Every new chapter template available in: `docs/chapter-template/`
 
 ## License
 MIT
