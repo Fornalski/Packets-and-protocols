@@ -14,6 +14,7 @@ Notes and small implementations built while working through **TCP/IP Illustrated
 Long-term goal is a networking-focused career (network admin, eventually protocol/standards work). This repo is where the reading turns into something I actually built, not just read about.
 
 ## Repo sturcture
+```
 packets-and-protocols/
 ├── README.md
 ├── LICENSE
@@ -34,7 +35,7 @@ packets-and-protocols/
 │       └── diagrams/
 └── ch01-<topic-name>/
     └── [chapter structure as defined in docs/chapter-template/]
-
+```
 ## ch0X - Chapter layout
 **What to expect from each file:**
 
