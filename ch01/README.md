@@ -9,7 +9,7 @@ The chapter includes short history of internet concpet, describes how it was evo
 - `c/` -  syntax and fragments of code required to write any network assosiated code in C
 - `SUMMARY.md` - describes some of topics worth mentioning from chapter one.
 - `diagrams/` - supporting diagrams/sketches (if applicable)
-- 'notes/raw/ch01.pdf - scans of my handnotes 
+- `notes/raw/ch01.pdf` - scans of my handnotes 
 
 ## Status
 For review
