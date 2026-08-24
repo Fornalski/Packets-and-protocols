@@ -1,27 +1,14 @@
-# Chapter 0X — <Topic Name>
+# Chapter 01 — Introduction
 
 ## Summary
-<One or two sentences: what this chapter of TCP/IP Illustrated covers.>
+The chapter includes short history of internet concpet, describes how it was eveolving and introducing most of protocols covered in the book. Point out the way that every chapter will be covered, introducing essential therms like ISO/OSI model, layers, multiplexing, encapsulation and axplains standaryzation of TCP/IP model.
 
 ## What's in this folder
 - `notes/understanding.md` — the topic explained in my own words
-- `python/` — Python implementation
-- `c/` — C implementation
-- `SOLUTION.md` — description of what was built, design decisions, limitations
-- `DELTA.md` — what's changed since the book (modern protocol context, RFC links)
-- `pcap/` — captured traffic relevant to this chapter (if applicable)
+- `python/` — Required syntax and fragments of code required to write any network assosiated code in python
+- `c/` — Required syntax and fragments of code required to write any network assosiated code in C
+- `SUMMARY.md` — describes some of topics worth mentioning from chapter one.
 - `diagrams/` — supporting diagrams/sketches (if applicable)
 
-## How to run
-**Python:**
-```bash
-python3 python/<file>.py
-```
-
-**C:**
-```bash
-cd c && make && ./<binary>
-```
-
 ## Status
-🚧 In progress
+For review
