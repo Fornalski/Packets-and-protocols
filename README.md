@@ -50,6 +50,19 @@ packets-and-protocols/
 | `pcap/` | Real captured packets illustrating the chapter's protocol in action |
 | `diagrams/` | Visual aids for anything sequential (handshakes, state machines, flows) |
 
+## Implementations
+
+| # | Fragment | Language(s) | What it does | Code |
+|---|----------|-------------|---------------|------|
+| 01 | Byte Order | C · Python | Network vs host byte order conversion, round-trip verified | [C](ch01-.../fragments/01_byte_order/c) · [Python](ch01-.../fragments/01_byte_order/python) |
+| 02 | Number Base Converter | C · Python | Bin/hex/dec conversion for reading raw header fields | [C](...) · [Python](...) |
+| 03 | IP Address Tools | C · Python | Validation and manipulation of IPv4/IPv6 addresses | [C](...) · [Python](...) |
+| 04 | CIDR Calculator | C · Python | Network/broadcast address and usable range from prefix | [C](...) · [Python](...) |
+| 05 | Hex Dump | C · Python | Raw byte buffer → readable hex+ASCII view | [C](...) · [Python](...) |
+| 06 | Checksum | C · Python | IP/TCP/UDP checksum, verified against RFC 1071 example | [C](...) · [Python](...) |
+| 07 | TCP Client/Server | C · Python | Minimal socket boilerplate | [C](...) · [Python](...) |
+| 08 | MAC Address Tools | C · Python | Formatting and validation | [C](...) · [Python](...) |
+| 09 | Struct Formats | C · Python | Header struct ↔ Python struct format string mapping | [C](...) · [Python](...) |
 
 ## License
 MIT
