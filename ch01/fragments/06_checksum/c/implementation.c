@@ -1,37 +1,28 @@
-#include <stdint.h>
+
 #include<arpa/inet.h>
 #include<stdio.h>
-#include <stdio.h>
-void byte_to_bits(uint8_t byte){
-    for(int i = 7; i >=0; i--){
-        printf("%d", (byte >> i) & 1);
+
+uint16_t calculate_checksum(uint8_t *data, size_t len){
+    u_int32_t sum = 0;
+    for(size_t i = 0; i < len; i+=2){
+        sum += ((uint16_t) data[i] << 8) + data[i +1];
+
+     /*   printf("%02x %02x\n", data[i], data[i+1]);
+        printf("Current sum: %08x\n", sum);*/
     }
+    while(sum >> 16){
+        sum = (sum & 0xffff) + (sum >> 16);
+    }
+    u_int16_t checksum = ~sum;
+    return checksum;
 }
 
 int main(void) {
+uint8_t data[] = "The quick brown fox jumps over the lazy dog";
+size_t len = sizeof(data);
 
-uint32_t y = 0x12345678;
-printf("The initial value: 0x%d", y);
-
-
-uint8_t *p1 = (uint8_t *)&y;
-printf("\nHost byte values for 0x12345678: \n");
-for (int i = 0; i < sizeof(y); i++){
-    printf("%02x ", p1[i]);
-}
-printf("\nNetwork byte values for 0x12345678: \n");
-
-uint32_t nx = htonl(y);
-uint8_t *p2 = (uint8_t *)&nx;
-for (int i = 0; i < sizeof(nx); i++){
-    printf("%02x ", p2[i] );
-}
-
-printf("\nInitial network value in binary:\n");
-for (int i = 0; i < sizeof(y); i++){
-    byte_to_bits(p2[i]);
-    printf(" ");    
-}
+printf("Expected: 0x72A4\n");
+printf("Calculated: 0x%04X\n", calculate_checksum(data, len));
 
 
 return 0;
