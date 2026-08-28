@@ -1,38 +1,46 @@
-#include <stdint.h>
-#include<arpa/inet.h>
-#include<stdio.h>
 #include <stdio.h>
-void byte_to_bits(uint8_t byte){
-    for(int i = 7; i >=0; i--){
-        printf("%d", (byte >> i) & 1);
+#include <stdint.h>
+#include <ctype.h>
+
+int hex_value(char c)
+{
+    if (c >= '0' && c <= '9')
+        return c - '0';
+
+    if (c >= 'a' && c <= 'f')
+        return c - 'a' + 10;
+
+    if (c >= 'A' && c <= 'F')
+        return c - 'A' + 10;
+
+    return -1;
+}
+
+int parse_mac(const char *str, uint8_t mac[6])
+{
+    for (int i = 0; i < 6; i++) {
+
+        int high = hex_value(str[i * 3]);
+        int low  = hex_value(str[i * 3 + 1]);
+
+        if (high == -1 || low == -1)
+            return 0;
+
+        mac[i] = (high << 4) | low;
+
+        if (i < 5 && str[i * 3 + 2] != ':')
+            return 0;
     }
+
+    return str[17] == '\0';
 }
 
-int main(void) {
+int main(void){
+    uint8_t mac[6];
 
-uint32_t y = 0x12345678;
-printf("The initial value: 0x%d", y);
-
-
-uint8_t *p1 = (uint8_t *)&y;
-printf("\nHost byte values for 0x12345678: \n");
-for (int i = 0; i < sizeof(y); i++){
-    printf("%02x ", p1[i]);
+if (parse_mac("00:1A:2B:3C:4D:5E", mac)) {
+    printf("Success\n");
 }
-printf("\nNetwork byte values for 0x12345678: \n");
-
-uint32_t nx = htonl(y);
-uint8_t *p2 = (uint8_t *)&nx;
-for (int i = 0; i < sizeof(nx); i++){
-    printf("%02x ", p2[i] );
-}
-
-printf("\nInitial network value in binary:\n");
-for (int i = 0; i < sizeof(y); i++){
-    byte_to_bits(p2[i]);
-    printf(" ");    
-}
-
 
 return 0;
 }
