@@ -1,17 +1,15 @@
 #Packets-and-protocols
 
-Notes and small implementations built while working through **TCP/IP Illustrated, Vol. 1 (2nd edition)**, chapter by chapter.
+Notes and thoughts about used in my projects network protocols according to **TCP/IP Illustrated, Vol. 1 (2nd edition)**.
 
 ## Status
-🟡 Just started — structure is set up, first chapters in progress.
+🟡 Just started - Repo will develop along my increasing networking skills
 
 ## Plan
-- One folder per chapter: hand notes scanned showing my way of understanding the process, short C/Python implementation, and some more described in details below
-- Chapters covered so far: project in preparation stage
-- Not limited to the book's original 2000s-era content — I'm cross-referencing modern RFCs and protocol extensions where relevant
-
+- One folder per Protocol/Important topic: reusable fragments of C/Python implementations, and some more described in details below
+- If relevant some fragments of relevant RFCs and changes since the book has been written.
 ## Why
-Long-term goal is a networking-focused career (network admin, eventually protocol/standards work). This repo is where the reading turns into something I actually built, not just read about.
+Long-term goal is a networking-focused knowledge base. Real goal is to build strong foundation to build small/medium size security related company. This repo is where the theoretical knowledge from the nerdy book meets with real life networking solutions.
 
 ## Repo sturcture
 ```
